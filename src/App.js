@@ -1,44 +1,39 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 import pdfMake from "pdfmake/build/pdfmake";
-import pdfFonts from "pdfmake/build/vfs_fonts";
+import pdfFonts from "./pdfmake/build/vfs_fonts";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 pdfMake.fonts = {
   THSarabunNew: {
-    normal: 'THSarabunNew.ttf',
-    bold: 'THSarabunNew-Bold.ttf',
-    italics: 'THSarabunNew-Italic.ttf',
-    bolditalics: 'THSarabunNew-BoldItalic.ttf'
+    normal: "THSarabunNew.ttf",
+    bold: "THSarabunNew-Bold.ttf",
+    italics: "THSarabunNew-Italic.ttf",
+    bolditalics: "THSarabunNew-BoldItalic.ttf",
   },
   Roboto: {
-    normal: 'Roboto-Regular.ttf',
-    bold: 'Roboto-Medium.ttf',
-    italics: 'Roboto-Italic.ttf',
-    bolditalics: 'Roboto-MediumItalic.ttf'
-  }
-}
+    normal: "Roboto-Regular.ttf",
+    bold: "Roboto-Medium.ttf",
+    italics: "Roboto-Italic.ttf",
+    bolditalics: "Roboto-MediumItalic.ttf",
+  },
+};
 
 class App extends Component {
-
-  constructor (props){
-     super(props)
-     this.printPDF = this.printPDF.bind(this)
+  constructor(props) {
+    super(props);
+    this.printPDF = this.printPDF.bind(this);
   }
 
-  printPDF(){
-
+  printPDF() {
     var docDefinition = {
-      content: [
-        { text: 'สวัสดีประเทศไทย reat pdf demo ', fontSize: 15 },
-      ],
-      defaultStyle:{
-        font: 'THSarabunNew'
-      }
+      content: [{ text: "สวัสดีประเทศไทย reat pdf demo ", fontSize: 15 }],
+      defaultStyle: {
+        font: "THSarabunNew",
+      },
     };
-    pdfMake.createPdf(docDefinition).open()
-
+    pdfMake.createPdf(docDefinition).open();
   }
 
   /**/
