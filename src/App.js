@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "./pdfmake/build/vfs_fonts";
+import axios from "axios";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 pdfMake.fonts = {
@@ -26,9 +27,34 @@ class App extends Component {
     this.printPDF = this.printPDF.bind(this);
   }
 
+  state = {
+    pagesContent: [],
+  };
+
+  componentDidMount() {
+    axios({
+      method: "get",
+      url: "localhost:3000/api/order/getPaid",
+      headers: {},
+      data: {},
+    }).then((res) => console.log("res", res));
+  }
+
   printPDF() {
     var docDefinition = {
-      content: [{ text: "สวัสดีประเทศไทย reat pdf demo ", fontSize: 15 }],
+      pageSize: { width: 283, height: 425 },
+      pageMargins: [25, 25],
+      content: [
+        { text: "ที่อยู่" },
+        { text: "ของ", pageBreak: "after" },
+        {
+          text: "ที่อยู่",
+        },
+        {
+          text: "ของ",
+          pageBreak: "after",
+        },
+      ],
       defaultStyle: {
         font: "THSarabunNew",
       },
