@@ -7,4 +7,4 @@
 
 สองตัวนี้ อยู่ใน  (prject folder)/node_modules/pdfmake/
 examples => เก็บไฟล์ font 
-pdfmake-build => ไฟล์ vfs_fonts.js ที่ build ใหม่
+pdfmake-build => ไฟล์ vfs_fonts.js ที่ build ใหม่# caseit-pack
