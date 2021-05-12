@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "firebase": "^8.4.3",
+    "jsbarcode": "^3.11.4",
     "pdfmake": "^0.1.34",
     "react": "^16.1.1",
     "react-dom": "^16.1.1"
