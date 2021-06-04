@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@tensorflow-models/blazeface": "^0.0.7",
     "axios": "^0.21.1",
     "firebase": "^8.4.3",
     "jsbarcode": "^3.11.4",
