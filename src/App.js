@@ -49,7 +49,7 @@ class App extends Component {
     console.log("storageRef", storageRef);
     axios({
       method: "get",
-      url: "https://caseit-git-develop-chaya-tan.vercel.app/api/order/getPaid",
+      url: "https://caseit.vercel.app/api/order/getPaid",
       headers: {},
       data: {},
     }).then((res) => {
